@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { MapComponent } from "./map/map.component";
-import { StoriesComponent } from "./stories/stories.component";
-import { CreateStoryComponent } from "./create-story/create-story.component";
+import { StoryComponent } from "./story/story.component";
+import { AddStoryComponent } from "./story/add-story/add-story.component";
 
 const routes: Routes = [
   {
@@ -11,11 +11,11 @@ const routes: Routes = [
   },
   {
     path: "stories",
-    component: StoriesComponent
+    component: StoryComponent
   },
   {
     path: "stories/create",
-    component: CreateStoryComponent
+    component: AddStoryComponent
   },
   {
     path: "",
