@@ -57,7 +57,7 @@ export class MapComponent implements OnInit {
         });
 
         L.control.zoom({ position: "topright" }).addTo(map);
-        L.control.layers(this.mapService.baseMaps).addTo(map);
+        //L.control.layers(this.mapService.baseMaps).addTo(map);
         L.control.scale().addTo(map);
 
         this.address = location.address;

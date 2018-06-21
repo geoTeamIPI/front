@@ -1,3 +1,5 @@
+import { Location } from "./location.model";
+
 export class Story {
 
     id: string;
@@ -9,4 +11,5 @@ export class Story {
         month: number,
         day: number
       };
+    location: Location;
   }
