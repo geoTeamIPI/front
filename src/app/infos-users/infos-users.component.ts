@@ -22,8 +22,11 @@ export class InfosUsersComponent implements OnInit {
   }
   getUser() {
     const id = +this.route.snapshot.paramMap.get("id");
-    this.userService
-      .getUser(id)
-      .subscribe(user => (this.user = user), err => console.log(err));
+    this.userService.getUser(id).subscribe(
+      user => {
+        this.user = user;
+      },
+      err => console.log(err)
+    );
   }
 }
