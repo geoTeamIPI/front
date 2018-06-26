@@ -16,9 +16,12 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { NavigatorComponent } from "./navigator/navigator.component";
 import { MapComponent } from "./map/map.component";
+import { StoryComponent } from "./story/story.component";
+import { AddStoryComponent } from "./story/add-story/add-story.component";
 
 import { MapService } from "./map.service";
 import { GeocodingService } from "./geocoding.service";
+import { StoryService } from "./story/story.service";
 
 import "leaflet";
 import "leaflet.vectorgrid";
@@ -26,7 +29,6 @@ import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
 import { SidebarComponent } from "./sidebar/sidebar.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { StoriesComponent } from "./stories/stories.component";
 import { CreateStoryComponent } from "./create-story/create-story.component";
 import { UserService } from "./services/user.service";
 import { CreateUserComponent } from "./create-user/create-user.component";
@@ -41,12 +43,13 @@ import { UpdateUserComponent } from "./update-user/update-user.component";
     AppComponent,
     ToolbarComponent,
     SidebarComponent,
-    StoriesComponent,
     CreateStoryComponent,
     CreateUserComponent,
     InfosUsersComponent,
     ListUsersComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    StoryComponent,
+    AddStoryComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +69,7 @@ import { UpdateUserComponent } from "./update-user/update-user.component";
     }),
     AppRoutingModule
   ],
-  providers: [MapService, GeocodingService, UserService],
+  providers: [MapService, GeocodingService, UserService, StoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

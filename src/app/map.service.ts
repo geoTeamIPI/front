@@ -82,10 +82,18 @@ export class MapService {
     this.map.fitBounds(bounds, {});
   }
 
+  addStory(latlng) {
+    console.log(latlng);
+  }
+
   private addMarker(e: L.LeafletMouseEvent) {
     const shortLat = Math.round(e.latlng.lat * 1000000) / 1000000;
     const shortLng = Math.round(e.latlng.lng * 1000000) / 1000000;
-    const popup = `<div>Latitude: ${shortLat}<div><div>Longitude: ${shortLng}<div>`;
+    //const popup = `<div>Latitude: ${shortLat}<div><div>Longitude: ${shortLng}<div>`;
+    const popup = `<a href="/stories/create?lat=${e.latlng.lat}&lng=${
+      e.latlng.lng
+    }" class="button" >Add Story</a>`;
+
     const icon = L.icon({
       iconUrl: "assets/marker-icon.png",
       shadowUrl: "assets/marker-shadow.png"
@@ -104,10 +112,7 @@ export class MapService {
   }
 
   updateMarkers(markers) {
-    console.log(markers);
     for (let i = 0; i < markers.length; i++) {
-      console.log(markers[i]);
-
       const icon = L.icon({
         iconUrl: "assets/marker-icon.png",
         shadowUrl: "assets/marker-shadow.png"
