@@ -40,7 +40,7 @@ export class GeocodingService {
       });
   }
 
-  getClientLocation() {
+  /*getClientLocation() {
     return this.http
       .get("http://ipv4.myexternalip.com/json")
       .flatMap((result: any) =>
@@ -55,5 +55,5 @@ export class GeocodingService {
 
         return location;
       });
-  }
+  }*/
 }

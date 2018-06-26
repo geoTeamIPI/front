@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs/Rx";
+import { Observable } from "rxjs";
 import * as L from "leaflet";
 import { GeocodingService } from "../geocoding.service";
 import { MapService } from "../map.service";

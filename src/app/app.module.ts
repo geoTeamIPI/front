@@ -11,6 +11,7 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { ToolbarComponent } from "./toolbar/toolbar.component";
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
 import { NavigatorComponent } from "./navigator/navigator.component";
@@ -24,9 +25,14 @@ import "leaflet.vectorgrid";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
 import { SidebarComponent } from "./sidebar/sidebar.component";
-import { AppRoutingModule } from ".//app-routing.module";
+import { AppRoutingModule } from "./app-routing.module";
 import { StoriesComponent } from "./stories/stories.component";
 import { CreateStoryComponent } from "./create-story/create-story.component";
+import { UserService } from "./services/user.service";
+import { CreateUserComponent } from "./create-user/create-user.component";
+import { InfosUsersComponent } from "./infos-users/infos-users.component";
+import { ListUsersComponent } from "./list-users/list-users.component";
+import { UpdateUserComponent } from "./update-user/update-user.component";
 
 @NgModule({
   declarations: [
@@ -36,7 +42,11 @@ import { CreateStoryComponent } from "./create-story/create-story.component";
     ToolbarComponent,
     SidebarComponent,
     StoriesComponent,
-    CreateStoryComponent
+    CreateStoryComponent,
+    CreateUserComponent,
+    InfosUsersComponent,
+    ListUsersComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
@@ -50,12 +60,13 @@ import { CreateStoryComponent } from "./create-story/create-story.component";
     MatSnackBarModule,
     MatSidenavModule,
     MatFormFieldModule,
+    FormsModule,
     ServiceWorkerModule.register("/ngsw-worker.js", {
       enabled: environment.production
     }),
     AppRoutingModule
   ],
-  providers: [MapService, GeocodingService],
+  providers: [MapService, GeocodingService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
